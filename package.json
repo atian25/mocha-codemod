@@ -1,0 +1,44 @@
+{
+  "name": "mocha-codemod",
+  "version": "1.0.0",
+  "description": "a codemod utils for mocha test",
+  "dependencies": {
+    "babylon": "^6.18.0",
+    "jscodeshift": "^0.3.32",
+    "mz": "^2.7.0",
+    "traverse": "^0.6.6"
+  },
+  "devDependencies": {
+    "autod": "^2.8.0",
+    "common-tags": "^1.4.0",
+    "egg-bin": "^3.4.0",
+    "egg-ci": "^1.7.0",
+    "eslint": "^4.0.0",
+    "eslint-config-egg": "^4.2.0",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "scripts": {
+    "autod": "autod",
+    "lint": "eslint .",
+    "test": "npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "ci": "npm run lint && egg-bin pkgfiles --check && npm run cov",
+    "pkgfiles": "egg-bin pkgfiles"
+  },
+  "ci": {
+    "version": "6, 8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "files": [
+    "index.js"
+  ],
+  "author": "TZ <atian25@qq.com>",
+  "license": "MIT"
+}
